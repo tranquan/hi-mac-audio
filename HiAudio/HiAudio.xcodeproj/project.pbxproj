@@ -11,7 +11,12 @@
 		BA956C232AF4EA1700EEE69F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C222AF4EA1700EEE69F /* ContentView.swift */; };
 		BA956C252AF4EA1800EEE69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA956C242AF4EA1800EEE69F /* Assets.xcassets */; };
 		BA956C282AF4EA1800EEE69F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA956C272AF4EA1800EEE69F /* Preview Assets.xcassets */; };
-		BA956C312AF52EF900EEE69F /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C302AF52EF900EEE69F /* AudioRecorder.swift */; };
+		BA956C312AF52EF900EEE69F /* HIAudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C302AF52EF900EEE69F /* HIAudioRecorder.swift */; };
+		BA956C352AF53A5F00EEE69F /* RecorderUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C342AF53A5F00EEE69F /* RecorderUtil.swift */; };
+		BA956C372AF53FEB00EEE69F /* SimpleAudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C362AF53FEB00EEE69F /* SimpleAudioRecorder.swift */; };
+		BA956C392AF5442600EEE69F /* AudioRecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C382AF5442600EEE69F /* AudioRecordingManager.swift */; };
+		BA956C3B2AF545FC00EEE69F /* AudioRecorderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA956C3A2AF545FC00EEE69F /* AudioRecorderTypes.swift */; };
+		BACBFA602AF8EF0500B3EDE6 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBFA5F2AF8EF0500B3EDE6 /* UIUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +26,12 @@
 		BA956C242AF4EA1800EEE69F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA956C272AF4EA1800EEE69F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA956C292AF4EA1800EEE69F /* HiAudio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiAudio.entitlements; sourceTree = "<group>"; };
-		BA956C302AF52EF900EEE69F /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		BA956C302AF52EF900EEE69F /* HIAudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIAudioRecorder.swift; sourceTree = "<group>"; };
+		BA956C342AF53A5F00EEE69F /* RecorderUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUtil.swift; sourceTree = "<group>"; };
+		BA956C362AF53FEB00EEE69F /* SimpleAudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAudioRecorder.swift; sourceTree = "<group>"; };
+		BA956C382AF5442600EEE69F /* AudioRecordingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingManager.swift; sourceTree = "<group>"; };
+		BA956C3A2AF545FC00EEE69F /* AudioRecorderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderTypes.swift; sourceTree = "<group>"; };
+		BACBFA5F2AF8EF0500B3EDE6 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				BA956C332AF52F7100EEE69F /* AudioRecorder */,
-				BA956C322AF52F0600EEE69F /* Misc */,
 				BA956C202AF4EA1700EEE69F /* HiAudioApp.swift */,
+				BACBFA5F2AF8EF0500B3EDE6 /* UIUtils.swift */,
 				BA956C222AF4EA1700EEE69F /* ContentView.swift */,
 				BA956C262AF4EA1800EEE69F /* Preview Content */,
-				BA956C302AF52EF900EEE69F /* AudioRecorder.swift */,
+				BA956C322AF52F0600EEE69F /* Misc */,
 			);
 			path = HiAudio;
 			sourceTree = "<group>";
@@ -84,6 +94,11 @@
 		BA956C332AF52F7100EEE69F /* AudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				BA956C3A2AF545FC00EEE69F /* AudioRecorderTypes.swift */,
+				BA956C302AF52EF900EEE69F /* HIAudioRecorder.swift */,
+				BA956C362AF53FEB00EEE69F /* SimpleAudioRecorder.swift */,
+				BA956C342AF53A5F00EEE69F /* RecorderUtil.swift */,
+				BA956C382AF5442600EEE69F /* AudioRecordingManager.swift */,
 			);
 			path = AudioRecorder;
 			sourceTree = "<group>";
@@ -158,9 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA956C312AF52EF900EEE69F /* AudioRecorder.swift in Sources */,
+				BA956C372AF53FEB00EEE69F /* SimpleAudioRecorder.swift in Sources */,
+				BA956C3B2AF545FC00EEE69F /* AudioRecorderTypes.swift in Sources */,
+				BA956C312AF52EF900EEE69F /* HIAudioRecorder.swift in Sources */,
+				BA956C392AF5442600EEE69F /* AudioRecordingManager.swift in Sources */,
 				BA956C232AF4EA1700EEE69F /* ContentView.swift in Sources */,
 				BA956C212AF4EA1700EEE69F /* HiAudioApp.swift in Sources */,
+				BA956C352AF53A5F00EEE69F /* RecorderUtil.swift in Sources */,
+				BACBFA602AF8EF0500B3EDE6 /* UIUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,15 +311,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HiAudio/HiAudio.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HiAudio/Preview Content\"";
-				DEVELOPMENT_TEAM = RPKB2939PY;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "HiAudio want to record audio";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -307,6 +328,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Kenji.HiAudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -318,15 +340,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HiAudio/HiAudio.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HiAudio/Preview Content\"";
-				DEVELOPMENT_TEAM = RPKB2939PY;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "HiAudio want to record audio";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -334,6 +357,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Kenji.HiAudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

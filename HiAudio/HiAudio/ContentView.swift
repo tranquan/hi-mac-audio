@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+	@ObservedObject var recorder = AudioRecordingManager.shared
+
+	var durationText: String {
+		let duration = recorder.recordingDuration
+		let durationText = duration > 0 ? String(format: " %02d:%02d", duration / 60, duration % 60) : "00:00"
+
+		return durationText
+	}
+
 	var body: some View {
 		VStack {
 			HStack {
-				Text("00:00")
+				Text(durationText)
 				Button("Record") {
-					// TODO: record
+					self.startRecording()
 				}
 			}
 			.frame(maxWidth: .infinity, alignment: .leading)
@@ -21,6 +30,26 @@ struct ContentView: View {
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 		.padding()
+	}
+
+	func startRecording() {
+		Task { @MainActor in
+			do {
+				try await recorder.startRecording()
+			} catch {
+				UIUtils.showAlert("Error", description: error.localizedDescription)
+			}
+		}
+	}
+
+	func stopRecording() {
+		Task { @MainActor in
+			do {
+				try await recorder.stopRecording()
+			} catch {
+				UIUtils.showAlert("Error", description: error.localizedDescription)
+			}
+		}
 	}
 }
 
